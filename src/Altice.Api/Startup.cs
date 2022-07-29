@@ -56,12 +56,16 @@ namespace Altice.Api
                .AllowAnyHeader());
 
             app.UseSwagger();
-            app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "Altice.Api v1"));
+            app.UseSwaggerUI(c =>
+            {
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "Altice.Api v1");
+                //c.RoutePrefix = string.Empty;
+            });
 
             app.UseHealthChecks("/health");
             app.UseHttpsRedirection();
 
-            app.UseErrorHandler();
+            //app.UseErrorHandler();
             app.UseRouting();
 
             app.UseEndpoints(endpoints =>

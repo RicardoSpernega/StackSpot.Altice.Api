@@ -11,7 +11,13 @@ namespace Altice.Infrastructure
     {
         public static IServiceCollection AddInfrastructure(this IServiceCollection services, IConfiguration configuration)
         {
+            //Services
             services.AddScoped<IHelloWorldService, HelloWorldService>();
+            services.AddScoped<IFormService, FormService>();
+
+            //Repositories
+
+
             return services;
         }
     }
