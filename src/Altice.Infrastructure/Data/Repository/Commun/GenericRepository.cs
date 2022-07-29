@@ -9,11 +9,11 @@ using System.Threading.Tasks;
 
 namespace Altice.Infrastructure.Data.Repository.Commun
 {
-    public abstract class GenericRepository
+    public abstract class BaseRepository
     {
         private readonly IConfiguration _configuration;
 
-        public GenericRepository(IConfiguration configuration)
+        public BaseRepository(IConfiguration configuration)
         {
             _configuration = configuration; 
         }

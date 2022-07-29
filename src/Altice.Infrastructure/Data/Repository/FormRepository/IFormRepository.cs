@@ -6,11 +6,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Altice.Domain.Interfaces.Services
+namespace Altice.Infrastructure.Data.Repository.FormRepository
 {
-    public interface IFormService
+    public interface IFormRepository
     {
-        Task<FormResponse> Create(FormRequest formRequest);
+        Task<FormResponse> NewForm(FormRequest formRequest);
         Task<IEnumerable<FormResponse>> GetAllFormByEmail(string email);
     }
 }

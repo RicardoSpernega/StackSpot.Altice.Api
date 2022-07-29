@@ -19,11 +19,11 @@ namespace Altice.Application.CreateForm
         [Required(ErrorMessage = "O campo {0} é obrigatório")]
 
         public DateTime DataNascimento { get; set; }
-        [Required(ErrorMessage = "O campo {0} é obrigatório")]
 
+        [Required(ErrorMessage = "O campo {0} é obrigatório")]
         public string Nif { get; set; }
-        [Required(ErrorMessage = "O campo {0} é obrigatório")]
 
+        [Required(ErrorMessage = "O campo {0} é obrigatório")]
         public string Morada { get; set; }
     }
 }

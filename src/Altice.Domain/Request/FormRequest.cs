@@ -2,14 +2,12 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 
-namespace Altice.Domain.Models
+namespace Altice.Domain.Request
 {
-    public class FormResponse : BaseEntity
+    public class FormRequest
     {
-        public int FormId { get; set; }
         public string Nome { get; set; }
 
         public string Email { get; set; }
