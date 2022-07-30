@@ -22,7 +22,7 @@ namespace Altice.Infrastructure.Data.Repository.FormRepository
         {
             try
             {
-                var query = "SELECT FormId, Email, Nome FROM Form WITH(NOLOCK) Where email like '" + email + "%'";
+                var query = "SELECT FormId, Email, Nome, Nif, Morada, DataNascimento as Nascimento FROM Form WITH(NOLOCK) Where email like '" + email + "%'";
 
                 IEnumerable<FormResponse> response = new List<FormResponse>();
 
@@ -46,14 +46,14 @@ namespace Altice.Infrastructure.Data.Repository.FormRepository
             {
                 CleanTheBase();
 
-                var query = "INSERT INTO Form (Nome, Email, Senha, Nif, DataNascimento, DataInclusao) VALUES (@Name, @Email, @Address, @Nif, @DataNascimento, @DataInclusao)";
+                var query = "INSERT INTO Form (Nome, Email, Morada, Nif, DataNascimento, DataInclusao) VALUES (@Nome, @Email, @Morada, @Nif, @DataNascimento, @DataInclusao)";
 
                 var parameters = new DynamicParameters();
-                parameters.Add("Name", formRequest.Nome, DbType.String);
-                parameters.Add("Address", formRequest.Morada, DbType.String);
-                parameters.Add("Nif", formRequest.Nif, DbType.String);
+                parameters.Add("Nome", formRequest.Nome, DbType.String);
                 parameters.Add("Email", formRequest.Email, DbType.String);
-                parameters.Add("DataNascimento", DateTime.Now.AddDays(-20), DbType.DateTime);
+                parameters.Add("Nif", formRequest.Nif, DbType.String);
+                parameters.Add("Morada", formRequest.Morada, DbType.String);
+                parameters.Add("DataNascimento", formRequest.Nascimento, DbType.DateTime);
                 parameters.Add("DataInclusao", DateTime.Now, DbType.DateTime);
 
                 using (var connection = CreateConnection())

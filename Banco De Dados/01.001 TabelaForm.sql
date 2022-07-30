@@ -15,7 +15,7 @@ END
 CREATE TABLE Form(
 	FormId INT IDENTITY (1,1) PRIMARY KEY NOT NULL,
 	Email NVARCHAR(40) NOT NULL,
-	Senha NVARCHAR(40) NOT NULL,
+	Morada NVARCHAR(40) NOT NULL,
 	Nif VARCHAR(8) NOT NULL,
 	DataNascimento DATE NOT NULL,
     DataInclusao DATE NOT NULL,
@@ -25,4 +25,5 @@ CREATE TABLE Form(
 --FIM DO 
 
 PRINT(DB_NAME() + ' .. ' + CONVERT(VARCHAR, GETDATE(), 20) + '.-. Executado com sucesso.');
+
 
