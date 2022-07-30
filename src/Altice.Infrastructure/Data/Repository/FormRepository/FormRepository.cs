@@ -77,7 +77,14 @@ namespace Altice.Infrastructure.Data.Repository.FormRepository
 
         private async void CleanTheBase()
         {
-            //todo - validação caso tenha 100 registro apagar dados da tabela
+            // - validação caso tenha 50 registro, apagar dados da tabela 
+            var query = "if((select count(*) from Form) > 50) begin delete from Form end";
+
+            using (var connection = CreateConnection())
+            {
+                await connection.ExecuteAsync(query);
+            }
+
         }
 
 
