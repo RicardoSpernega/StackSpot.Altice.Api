@@ -31,4 +31,8 @@
   <ItemGroup>
     <ProjectReference Include="..\..\src\Altice.Domain\Altice.Domain.csproj" />
   </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Models\" />
+  </ItemGroup>
 </Project>

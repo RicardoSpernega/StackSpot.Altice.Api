@@ -2,7 +2,6 @@ using System;
 using System.Runtime.Serialization;
 using AutoMapper;
 using Altice.Application.Common.Mappings;
-using Altice.Application.CreateHelloWorld;
 using Altice.Domain.Models;
 using Xunit;
 
@@ -28,14 +27,6 @@ namespace Altice.Application.UnitTests.Common.Mappings
             _configuration.AssertConfigurationIsValid();
         }
 
-        [Theory]
-        [InlineData(typeof(HelloWorldResponse), typeof(CreateHelloWorldResult))]
-        public void ShouldSupportMappingFromSourceToDestination(Type source, Type destination)
-        {
-            var instance = GetInstanceOf(source);
-
-            _mapper.Map(instance, source, destination);
-        }
 
         private object GetInstanceOf(Type type)
         {

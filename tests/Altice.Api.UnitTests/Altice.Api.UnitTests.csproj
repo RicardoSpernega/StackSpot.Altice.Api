@@ -35,6 +35,7 @@
     <None Remove="Controller\" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Controllers\" />
     <Folder Include="Controller\" />
   </ItemGroup>
 </Project>
